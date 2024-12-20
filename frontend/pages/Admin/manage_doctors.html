@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./manage_doctors.css">
+</head>
+<body>
+    
+     <!-- Navbar -->
+     <div id="navbar">
+        <div class="left">Cumilla Serenity Health Center</div>
+        <div class="right">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="../Doctors/doctors.html">Doctors</a></li>
+                <li><a href="../Login/login.html">Login</a></li>
+                <li><a href="../Register/register.html">Register</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="manage-doctors-container">
+            <!-- Left Section: Add Doctors Form -->
+            <div class="form-section">
+                <h2>ADD DOCTOR</h2>
+                <form id="addDoctorForm">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+        
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="qualification">Qualification:</label>
+                    <input type="text" id="qualification" name="qualification" required>
+        
+                    <label for="specialist">Specialist:</label>
+                    <select id="specialist" name="specialist" required>
+                        <option value="neurology">Neurology</option>
+                        <option value="pediatrics">Pediatrics</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="oncology">Oncology</option>
+                        <option value="orthopedics">Orthopedics</option>
+                        <option value="emergency">Emergency</option>
+                    </select>
+        
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <label for="confirmPassword">Re-enter Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        
+                    <button type="submit">Add Doctor</button>
+                </form>
+            </div>
+        
+            <!-- Right Section: Doctor Details Table -->
+            <div class="table-section">
+                <h2>DOCTOR DETAILS</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date of Birth</th>
+                            <th>Qualification</th>
+                            <th>Specialist</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Doctor data will be populated here -->
+                        <tr>
+                            <td>Dr. Foysal Rana</td>
+                            <td>12-9-1993</td>
+                            <td>MD</td>
+                            <td>Cardiology</td>
+                            <td>frana@gmail.com</td>
+                            <td>01234455439</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="./manage_doctors.js"></script>
+    <script src="../../components/Navbar/navbar.js"></script>
+</body>
+</html>

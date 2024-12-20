@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar">
+        <div class="left">Cumilla Serenity Health Center</div>
+        <div class="right">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="../Doctors/doctors.html">Doctors</a></li>
+                <li><a href="../Login/login.html">Login</a></li>
+                <li><a href="../Register/register.html">Register</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- <script>
+        // Load the navbar.html into the div#navbar
+        fetch('../../components/Navbar/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script> -->
+
+
+    <div class="container">
+        <!-- Upper portion -->
+        <div class="upper-portion">
+            <div class="left-side">
+                <img src="homePageDoctor.png" alt="Doctor Image" class="doctor-img">
+            </div>
+            <div class="right-side">
+                <button id="appointment-btn" onclick="redirectToAppointment()">Apply for an Appointment</button>
+            </div>
+        </div>
+
+        <!-- Lower portion -->
+        <div class="lower-portion">
+            <h2><b>Our Services</b></h2>
+            <ul class="departments-list">
+                <li>Neurology</li>
+                <li>Pediatrics</li>
+                <li>Cardiology</li>
+                <li>Oncology</li>
+                <li>Emergency</li>
+                <li>Orthopedics</li>
+            </ul>
+        </div>
+    </div>
+    <script src="/frontend/components/Navbar/navbar.js"></script>
+    <script src="./home.js"></script>
+</body>
+</html>

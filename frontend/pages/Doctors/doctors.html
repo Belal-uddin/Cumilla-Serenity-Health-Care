@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="doctor.css">
+</head>
+<body>
+     <!-- Navbar -->
+     <div id="navbar">
+        <div class="left">Cumilla Serenity Health Center</div>
+        <div class="right">
+            <ul>
+                <li><a href="../Home/home.html">Home</a></li>
+                <li><a href="doctors.html">Doctors</a></li>
+                <li><a href="../Login/login.html">Login</a></li>
+                <li><a href="../Register/register.html">Register</a></li>
+            </ul>
+        </div>
+    </div> 
+    <container>
+        <div class="department">
+            <h2 id="table-heading">SELECT A DEPARTMENT</h2>
+            
+
+            <ul class="departments-list">
+                <li onclick="displayDoctors('neurology')">Neurology</li>
+                <li onclick="displayDoctors('pediatrics')">Pediatrics</li>     
+                <li onclick="displayDoctors('cardiology')">Cardiology</li>
+                <li onclick="displayDoctors('oncology')">Oncology</li>
+                <li onclick="displayDoctors('emergency')">Emergency</li>
+                <li onclick="displayDoctors('orthopedics')">Orthopedics</li>
+            </ul>
+
+        </div>
+    </container>
+    <script src="../../components/Navbar/navbar.js"></script>
+    <script src="./doctors.js"></script>
+
+</body>
+</html>

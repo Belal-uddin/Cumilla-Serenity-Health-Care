@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+     <!-- Navbar -->
+     <div id="navbar">
+        <div class="left">Cumilla Serenity Health Center</div>
+        <div class="right">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="../Doctors/doctors.html">Doctors</a></li>
+                <li><a href="../Login/login.html">Login</a></li>
+                <li><a href="../Register/register.html">Register</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Admin | Dashboard</h1>
+        <div class="dashboard">
+
+
+            <div class="card manage-doctors">
+                <h2>Manage Doctors</h2>
+                <p>Add or remove doctors and update their profiles.</p>
+                <button onclick="location.href='manage_doctors.html'">Manage Doctors</button>
+            </div>
+
+            
+            <div class="card manage-users">
+                <h2>Manage Users</h2>
+                <p>View and manage registered users.</p>
+                <button onclick="location.href='manage_users.html'">View Users</button>
+            </div>
+            
+            <!-- <div class="card appointments">
+                <h2>Appointments</h2>
+                <p>View and manage all patient appointments.</p>
+                <button>View Appointments</button>
+            </div> -->
+        </div>
+    </div>
+    
+    <script src="../../components/Navbar/navbar.js"></script>
+</body>
+</html>

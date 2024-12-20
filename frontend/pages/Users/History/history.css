@@ -1,0 +1,158 @@
+/* General reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+
+
+/* Navbar  */
+
+#navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Ensure both left and right sides are spaced apart */
+    align-items: center; /* Vertically center the items */
+    background-color: #4a6582;
+    color: white;
+    padding: 15px;
+}
+
+.left {
+    flex: 1; /* Takes 1/3 of the space */
+    font-size: 20px; /* Optional: make the text slightly larger */
+
+}
+
+.right {
+    flex: 2; /* Takes 2/3 of the space */
+    display: flex;
+    justify-content: flex-end; /* Aligns the navigation to the right */
+}
+
+ul {
+    list-style: none;
+    display: flex; /* Make the list items horizontal */
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin-left: 40px; /* Space between the links */
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #3bc1ff; /* Optional: add a hover effect to the links */
+}
+
+
+/* Container and Table styling */
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 80%;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.table-part {
+    text-align: center;
+}
+
+.table-part h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #0066cc;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 1em;
+}
+
+table thead {
+    background-color: #0066cc;
+    color: white;
+}
+
+table thead th {
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+table tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+
+.status-cell{
+    width: 20px;
+}
+/* Status cell background colors */
+.status-cell.pending {
+    background-color: rgb(236, 199, 12);
+    color: black;
+}
+
+.status-cell.accepted,
+.status-cell.seen {
+    background-color: green;
+    color: white;
+}
+
+.status-cell.rejected,
+.status-cell.absent {
+    background-color: red;
+    color: white;
+}
+
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #navbar .right ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        max-width: 95%;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+}

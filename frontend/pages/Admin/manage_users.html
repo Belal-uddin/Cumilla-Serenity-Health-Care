@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./manage_users.css">
+</head>
+<body>
+    
+     <!-- Navbar -->
+     <div id="navbar">
+        <div class="left">Cumilla Serenity Health Center</div>
+        <div class="right">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="../Doctors/doctors.html">Doctors</a></li>
+                <li><a href="../Login/login.html">Login</a></li>
+                <li><a href="../Register/register.html">Register</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="manage-users-container">
+           
+            <div class="table-section">
+                <h2>ALL USERS</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Profession</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Doctor data will be populated here -->
+                        <tr>
+                            <td>Md Belal Uddin</td>
+                            <td>24</td>
+                            <td>Student</td>
+                            <td>belal@gmail.com</td>
+                            <td>01234455439</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="./manage_users.js"></script>
+    <script src="../../components/Navbar/navbar.js"></script>
+</body>
+</html>

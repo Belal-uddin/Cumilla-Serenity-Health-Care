@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+     <!-- Navbar -->
+     <div id="navbar">
+        <div class="left">Cumilla Serenity Health Center</div>
+        <div class="right">
+            <ul>
+                <li><a href="../Home/home.html">Home</a></li>
+                <li><a href="../Doctors/doctors.html">Doctors</a></li>
+                <li><a href="../Login/login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <body>
+   
+    
+        <div class="container">
+            <div class="registration-form">
+                <h1>Register</h1>
+                <form id="form-body">
+                    <div class="form-group">
+                        <label for="name"></label>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age"></label>
+                        <input type="number" id="age" name="age" placeholder="Age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profession"></label>
+                        <input type="text" id="profession" name="profession" placeholder="Profession" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input type="text" id="email" name="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile"></label>
+                        <input type="text" id="mobile" name="mobile" placeholder="Mobile No" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Default Role:</label>
+                        <select id="role" name="role" required>
+                            <option value="user">User</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"></label>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="repassword"></label>
+                        <input type="password" id="repassword" name="repassword" placeholder="Re-Enter Password">
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="register.js"></script>
+        <script src="../../components/Navbar/navbar.js"></script>
+    </body>
+</body>
+</html>

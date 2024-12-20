@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Doctor</title>
+    <link rel="stylesheet" href="edit.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Doctor</h1>
+        <form id="editDoctorForm">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" disabled>
+
+            <label for="qualification">Qualification</label>
+            <input type="text" id="qualification" name="qualification" required>
+
+            <label for="specialist">Specialist</label>
+            <select id="specialist" name="specialist" required>
+                <option value="neurology">Neurology</option>
+                <option value="pediatrics">Pediatrics</option>
+                <option value="cardiology">Cardiology</option>
+                <option value="oncology">Oncology</option>
+            </select>
+
+            <label for="mobile">Mobile</label>
+            <input type="text" id="mobile" name="mobile" required>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+    <script src="./edit.js"></script>
+</body>
+</html>

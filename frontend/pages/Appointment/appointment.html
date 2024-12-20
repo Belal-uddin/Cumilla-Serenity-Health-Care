@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for an Appointment</title>
+    <link rel="stylesheet" href="./appointment.css">
+</head>
+<body>
+
+         <!-- Navbar -->
+         <div id="navbar">
+            <div class="left">Manobotar Haspatal</div>
+            <div class="right">
+                <ul>
+                    <li><a href="../Home/home.html">Home</a></li>
+                    <li><a href="../Doctors/doctors.html">Doctors</a></li>
+                    <li><a href="../Login/login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Apply for an Appointment</h1>
+            <form id="appointmentForm">
+                <label for="department">Department</label>
+                <select id="department" required>
+                        <option value="" disabled selected>Select a Department</option>
+                        <option value="neurology">Neurology</option>
+                        <option value="pediatrics">Pediatrics</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="oncology">Oncology</option>
+                        <option value="orthopedics">Orthopedics</option>
+                        <option value="emergency">Emergency</option>
+                </select>
+                
+                <label for="doctor">Doctor:</label>
+                <select id="doctor" required>
+                    <!-- <option value="" disabled selected>Select a doctor</option> -->
+                </select>
+
+                <label for="date">Appointment Date:</label>
+                <input type="date" id="date" required>
+
+                <label for="patientName">Patient Name:</label>
+                <input type="text" id="patientName" required>
+                
+                <label for="age">Age:</label>
+                <input type="number" id="age" required>
+                
+                <label for="description">Problem Description:</label>
+                <textarea id="description" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    
+    <script src="../../components/Navbar/navbar.js"></script>
+    <script src="./appointment.js"></script>
+</body>
+</html>

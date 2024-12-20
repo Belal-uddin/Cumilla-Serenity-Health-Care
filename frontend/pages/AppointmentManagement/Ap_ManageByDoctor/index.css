@@ -1,0 +1,177 @@
+/* General reset and body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Ensure both left and right sides are spaced apart */
+    align-items: center; /* Vertically center the items */
+    background-color: #4a6582;
+    color: white;
+    padding: 15px;
+}
+
+.left {
+    flex: 1; /* Takes 1/3 of the space */
+    font-size: 20px; /* Optional: make the text slightly larger */
+
+}
+
+.right {
+    flex: 2; /* Takes 2/3 of the space */
+    display: flex;
+    justify-content: flex-end; /* Aligns the navigation to the right */
+}
+
+ul {
+    list-style: none;
+    display: flex; /* Make the list items horizontal */
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin-left: 40px; /* Space between the links */
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #3bc1ff; /* Optional: add a hover effect to the links */
+}
+
+
+h2{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 1.8em;
+    color: #0066cc;
+    font-weight: bold;
+    /* display: block; */
+}
+
+
+.container {
+    width: 80%;
+    min-height: calc(100vh - 70px);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 20px;
+}
+
+/* Table styling */
+.requested-appointment-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* margin: 20px 0; */
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header styling */
+.requested-appointment-table thead tr {
+    background-color: #0066cc;
+    color: #ffffff;
+    text-align: left;
+}
+
+/* Table cell styling */
+.requested-appointment-table th,
+.requested-appointment-table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+}
+
+/* Zebra striping for table rows */
+.requested-appointment-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+/* Row hover effect */
+.requested-appointment-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Status-specific styling */
+.requested-appointment-table td:last-child {
+    font-weight: bold;
+}
+
+.requested-appointment-table td:last-child:before {
+    content: "• ";
+}
+
+.requested-appointment-table td:last-child {
+    color: #888; /* Default color for status */
+}
+
+.requested-appointment-table td:last-child:before {
+    content: "• ";
+}
+
+.requested-appointment-table td:last-child[data-status="Pending"] {
+    color: #ff9800;
+}
+
+.requested-appointment-table td:last-child[data-status="Accepted"] {
+    color: #4caf50;
+}
+
+.requested-appointment-table td:last-child[data-status="Rejected"] {
+    color: #f44336;
+}
+
+
+/* Common button styling */
+.action-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Approve button - Green */
+.approve-btn {
+    background-color: #4CAF50; /* Green */
+}
+
+.approve-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Reject button - Red */
+.reject-btn {
+    background-color: #f44336; /* Red */
+}
+
+.reject-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
