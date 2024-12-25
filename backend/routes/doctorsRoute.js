@@ -17,6 +17,7 @@ router.get('/getDoctorByEmail',doctorController.getDoctorByEmail);
 
 // 
 router.put('/editDoctor',doctorController.editDoctor);
+router.delete('/deleteDoctor',doctorController.deleteDoctor);
 
 module.exports = router;
 

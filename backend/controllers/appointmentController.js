@@ -169,3 +169,27 @@ exports.appointmentSeenOrAbsent = async(req,res)=>{
 }
 
 
+
+
+
+
+// sends status count for each category to draw the pie chart
+
+exports.statusCount = async(req,res) =>{
+    try {
+        const [rows] = await db.query(`
+            SELECT 
+                SUM(status = 'pending') AS pending,
+                SUM(status = 'accepted') AS accepted,
+                SUM(status = 'rejected') AS rejected,
+                SUM(status = 'seen') AS seen,
+                SUM(status = 'absent') AS absent
+            FROM appointment
+        `);
+
+        res.json(rows[0]); // Send the aggregated counts
+    } catch (error) {
+        console.error('Error fetching appointment counts:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+}

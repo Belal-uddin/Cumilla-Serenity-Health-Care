@@ -11,3 +11,8 @@ exports.getUsers = async (req,res)=>{
         res.status(500).json({message: 'Error when fetching users'});
     }
 }
+
+
+exports.deleteUser = async (req,res)=>{
+
+}

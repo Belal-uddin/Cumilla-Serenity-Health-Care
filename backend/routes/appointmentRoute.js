@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const appointmentController = require('../controllers/appointmentController.js');
+const { route } = require("./authRoutes.js");
 
 
 // ::::::::::::FOR USER::::::::::::
@@ -32,4 +33,5 @@ router.put('/modifyForToday',appointmentController.appointmentSeenOrAbsent);
 
 
 
+router.get('/statusCountForAllTime',appointmentController.statusCount);
 module.exports = router;

@@ -9,7 +9,14 @@ exports.addDoctor = async (req, res) => {
 
 
     // hash the password
-    const hashedPassword = await hashPassword(password);
+    let hashedPassword;
+    try {
+        hashedPassword = await hashPassword(password);
+    } catch (error) {
+        console.error('Error hashing password:', error);
+        return res.status(500).json({ error: 'Failed to hash password' });
+    }
+
 
     // SQL query to insert a new doctor into the 'doctors' table
     const query = `
@@ -18,16 +25,19 @@ exports.addDoctor = async (req, res) => {
     `;
 
     try {
-        // Insert the doctor into the database
-        db.query(query, [fullName, dob, email, qualification, specialist, mobile,'doctor',hashedPassword], (err, result) => {
-            if (err) {
-                console.error('Error adding doctor:', err);
-                return res.status(500).json({ error: 'Internal Server Error' });
-            }
+        const [result] = await db.query(query, [
+            fullName,
+            dob,
+            email,
+            qualification,
+            specialist,
+            mobile,
+            'doctor',
+            hashedPassword,
+        ]);
 
-            // Send a successful response with the doctor ID
-            res.status(201).json({ message: 'Doctor added successfully!', doctorId: result.insertId });
-        });
+        // Send a successful response
+        res.status(201).json({ message: 'Doctor added successfully!', doctorId: result.insertId });
     } catch (error) {
         console.error('Error adding doctor:', error);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -130,3 +140,28 @@ exports.editDoctor = async(req,res)=>{
         res.status(500).json({message:'An error occured while updating doctor.', error:error.message});
     }
 }
+
+
+
+// this will delete a doctor specified by email
+exports.deleteDoctor = async (req, res) => {
+    const { email } = req.body;
+
+    if (!email) {
+        return res.status(400).json({ error: 'Email is required to delete a doctor' });
+    }
+
+    try {
+        const query = 'DELETE FROM doctors WHERE email = ?';
+        const [result] = await db.query(query, [email]);
+
+        if (result.affectedRows > 0) {
+            res.status(200).json({ message: 'Doctor deleted successfully!' });
+        } else {
+            res.status(404).json({ error: 'Doctor not found' });
+        }
+    } catch (error) {
+        console.error('Error deleting doctor:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
