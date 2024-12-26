@@ -49,8 +49,8 @@ Cumilla Serenity Healt Care is a **Hospital Management System (HMS)** designed t
 ### Common Pages for General Users, Doctors and Admins
 
 1. #### Home Page
-    [Home Page](../../../../belal/screenshot/home_page.png)
+    ![Home Page](./images_for_readme/home_page.png)
 2. #### Registraion Page
-    [Registration Page](../../../../belal/screenshot/registration_page.png)
+    ![Registration Page](./images_for_readme/registration_page.png)
 3. #### Doctor List(As per department)
-    [Doctor List](../../../../belal/screenshot/doctor_list.png)
+    ![Doctor List](./images_for_readme/doctor_list.png)
