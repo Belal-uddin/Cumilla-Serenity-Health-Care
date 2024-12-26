@@ -49,8 +49,33 @@ Cumilla Serenity Healt Care is a **Hospital Management System (HMS)** designed t
 ### Common Pages for General Users, Doctors and Admins
 
 1. #### Home Page
+    There is a **Apply For An Appointment** button in the home page. Any one can book an appointment by clicking the button but he/she must be registered as user.
     ![Home Page](./images_for_readme/home_page.png)
-2. #### Registraion Page
+
+2. #### Doctor List(As per department)
+    Available doctors for each department can be seen by clicking that department
+    ![Department List](./images_for_readme/department_list.png)
+    Available doctors for Neurology department
+    ![Doctors List](./images_for_readme/doctor_list.png)
+
+
+3. #### Registraion Page
+    Only General Users can regisger in this website
     ![Registration Page](./images_for_readme/registration_page.png)
-3. #### Doctor List(As per department)
-    ![Doctor List](./images_for_readme/doctor_list.png)
+
+
+
+### Admins Dashboard
+1. #### Admin Dashboard
+    Admin can see the pie chart of appointment status ration(pending,accepted,rejected,seen,absent)
+    ![Admin Dashboard](./images_for_readme/admin_dashboard.png)
+2. #### Admin Add Doctor
+    Admin adds doctor with details for a specific department
+    ![Add Doctor](./images_for_readme/admin_add_doctor.png)
+3. #### Admin Doctor List
+    Admin can see doctors whole list
+    ![Admin Doctor List](./images_for_readme/admin_doctor_list.png)
+4. #### Admin Edits or Deletes 
+    Anmin can edit doctor info or can delete a doctor
+    ![Admin Edit Doctor](./images_for_readme/admin_edit_doctor.png)
+    ![Admin Delete Doctor](./images_for_readme/admin_delete_user.png)
