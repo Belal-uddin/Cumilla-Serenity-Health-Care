@@ -79,3 +79,23 @@ Cumilla Serenity Healt Care is a **Hospital Management System (HMS)** designed t
     Anmin can edit doctor info or can delete a doctor
     ![Admin Edit Doctor](./images_for_readme/admin_edit_doctor.png)
     ![Admin Delete Doctor](./images_for_readme/admin_delete_user.png)
+
+### User Dashboard
+1. #### User Dashboard
+   User can book new appointment or can see appointment history. Moreover,a user can book appointment on behalf of other patient.
+
+   ![User Dashboard](./images_for_readme/user_dashboard.png)
+   ![User New Appointment](./images_for_readme/user_new_appointment.png)
+   ![User Appointment History](./images_for_readme/user_appoinment_history.png)
+
+### Doctor Dashboard
+1. #### Doctor Dashboard
+   Doctor can see new appoinment requests, accept those requests or rejects and can also see all managed appoinments history of him.
+   ![Doctor Dashboard](./images_for_readme/doctor_dashboard.png)
+2. #### Manage Appointment
+   ![Doctor Manage Appointment](./images_for_readme/doctor_req_appointment.png)
+3. #### Today's Appointment
+    Doctor can see today's appointment lists and mark as **Seen** or **Absent**
+    ![Doctor Today Appointment](./images_for_readme/doctor_today_appointment.png)
+4. #### Appointment history of Doctor
+    ![Appointment History](./images_for_readme/doctor_app_history.png)
