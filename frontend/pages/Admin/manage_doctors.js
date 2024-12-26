@@ -1,62 +1,4 @@
-document.getElementById('addDoctorForm').addEventListener('submit', async function (e) {
-    e.preventDefault(); // Prevents the default form submission behavior
 
-    // Disable the submit button to prevent multiple submissions
-    const submitButton = this.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
-
-    const fullName = document.getElementById('fullName').value;
-    const dob = document.getElementById('dob').value;
-    const email = document.getElementById('email').value;
-    const qualification = document.getElementById('qualification').value;
-    const specialist = document.getElementById('specialist').value;
-    const mobile = document.getElementById('mobile').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-
-    // Password matching check
-    if (password !== confirmPassword) {
-        alert('Passwords do not match!');
-        submitButton.disabled = false; // Re-enable the button
-        return;
-    }
-
-    // Create the data object to send
-    const data = {
-        fullName,
-        dob,
-        email,
-        qualification,
-        specialist,
-        mobile,
-        password,
-    };
-
-    try {
-        const response = await fetch('http://localhost:3000/api/doctors/addDoctors', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-
-        if (response.ok) {
-            const result = await response.json();
-            alert('Doctor added successfully');
-            this.reset(); // Reset the form fields
-            await fetchDoctors(); // Refresh the doctor list
-        } else {
-            const error = await response.json();
-            alert(`Failed to add doctor: ${error.message || 'Unknown error'}`);
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred. Please try again.');
-    } finally {
-        submitButton.disabled = false; // Re-enable the button after the request
-    }
-});
 
 // Function to fetch all doctors and populate the table
 async function fetchDoctors() {
@@ -107,11 +49,37 @@ document.addEventListener('DOMContentLoaded', fetchDoctors);
 
 
 document.querySelector('tbody').addEventListener('click', async (event) => {
-    if (event.target.classList.contains('edit-btn')) {
-        const row = event.target.closest('tr');
-        const email = row.querySelector('td:nth-child(5)').innerText;
+    const row = event.target.closest('tr');
+    const email = row.querySelector('td:nth-child(5)').innerText;
 
+    if (event.target.classList.contains('edit-btn')) {
         // Redirect to edit.html with email as a query parameter
         window.location.href = `./Edit_Doctor/edit.html?email=${encodeURIComponent(email)}`;
+    } else if (event.target.classList.contains('delete-btn')) {
+        // Show confirmation popup
+        const confirmation = prompt('Are you sure you want to delete this doctor? If yes, type "y"');
+
+        if (confirmation && confirmation.toLowerCase() === 'y') {
+            try {
+                const response = await fetch('http://localhost:3000/api/doctors/deleteDoctor', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email }), // Send email as part of the request body
+                });
+
+                if (response.ok) {
+                    alert('Doctor deleted successfully!');
+                    fetchDoctors(); // Refresh the doctor list
+                } else {
+                    const error = await response.json();
+                    alert(`Failed to delete doctor: ${error.message || 'Unknown error'}`);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        }
     }
 });

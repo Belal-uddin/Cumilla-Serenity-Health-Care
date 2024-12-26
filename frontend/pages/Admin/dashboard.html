@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
      <!-- Navbar -->
@@ -24,28 +25,35 @@
         <h1>Admin | Dashboard</h1>
         <div class="dashboard">
 
+            <div class="left-side">
+                <div class="card manage-doctors">
+                    <h2>Manage Doctors</h2>
+                    <p>Remove doctors and update their profiles.</p>
+                    <button onclick="location.href='manage_doctors.html'">Manage Doctors</button>
+                </div>
 
-            <div class="card manage-doctors">
-                <h2>Manage Doctors</h2>
-                <p>Add or remove doctors and update their profiles.</p>
-                <button onclick="location.href='manage_doctors.html'">Manage Doctors</button>
-            </div>
+                <div class="card appointments">
+                    <h2>Add New Doctor</h2>
+                    <p>You can add new doctor</p>
+                    <button onclick="location.href='./Add_Dcotor/add_doctor.html'">Add</button>
+                </div>
 
-            
-            <div class="card manage-users">
-                <h2>Manage Users</h2>
-                <p>View and manage registered users.</p>
-                <button onclick="location.href='manage_users.html'">View Users</button>
+
+                <div class="card manage-users">
+                    <h2>Manage Users</h2>
+                    <p>View and manage registered users.</p>
+                    <button onclick="location.href='manage_users.html'">View Users</button>
+                </div>
             </div>
-            
-            <!-- <div class="card appointments">
-                <h2>Appointments</h2>
-                <p>View and manage all patient appointments.</p>
-                <button>View Appointments</button>
-            </div> -->
+            <div class="right-side">
+                <h3 id="diagram-head">Patient's Appointments Diagram</h3>
+                <canvas id="appointmentStatusChart"></canvas>
+            </div>
+           
         </div>
     </div>
     
     <script src="../../components/Navbar/navbar.js"></script>
+    <script src="./dashboard.js"></script>
 </body>
 </html>

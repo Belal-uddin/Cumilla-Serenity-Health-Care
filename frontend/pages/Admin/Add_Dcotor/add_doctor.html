@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./add_doctor.css">
+</head>
+<body>
+     <!-- Navbar -->
+     <div id="navbar">
+        <div class="left">Cumilla Serenity Health Center</div>
+        <div class="right">
+            <ul>
+                <li><a href="../../Home/home.html">Home</a></li>
+                <li><a href="../../Doctors/doctors.html">Doctors</a></li>
+                <li><a href="../../Login/login.html">Login</a></li>
+                <li><a href="../../Register/register.html">Register</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-section">
+            <h2>ADD NEW DOCTOR</h2>
+            <form id="from-body">
+                <div>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="qualification">Qualification:</label>
+                    <input type="text" id="qualification" name="qualification" required>
+                </div>
+                <div>
+                    <label for="specialist">Specialist:</label>
+                    <select id="specialist" name="specialist" required>
+                        <option value="neurology">Neurology</option>
+                        <option value="pediatrics">Pediatrics</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="oncology">Oncology</option>
+                        <option value="orthopedics">Orthopedics</option>
+                        <option value="emergency">Emergency</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <label for="confirmPassword">Re-enter Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            
+        </div>
+        
+    </div>
+    
+    <script src="../../../components//Navbar/navbar.js"></script>
+    <script src="./add_doctor.js"></script>
+</body>
+</html>

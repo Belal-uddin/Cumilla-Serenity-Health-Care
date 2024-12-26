@@ -7,11 +7,14 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
-    display: flex;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    /* display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    height: 100vh; */
 }
 
 
@@ -71,7 +74,7 @@ ul li a:hover {
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    /* padding: 30px; */
     
 }
 
@@ -80,21 +83,25 @@ ul li a:hover {
 /* Upper portion */
 .upper-portion {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
+    justify-content: center;
+    align-items:end;
+    height: 650px;
+    background-image: url('./images//hospital.webp');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* margin-bottom: 30px; */
     /* background-color: ; */
 }
 
-.left-side {
+/* .left-side {
     flex: 1;
     display: flex;
     justify-content: center;
 }
 
-.doctor-img {
-    width: 50%;
-    height: 90%;
-    border-radius: 10px;
+.hospital-img {
+   height: 500px;
 }
 
 .right-side {
@@ -102,26 +109,30 @@ ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 #appointment-btn {
     padding: 12px 30px;
-    background-color: #4a6582;
+    margin-bottom: 70px;
+    background-color:#1f1f22;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 24px;
+    font: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 #appointment-btn:hover {
-    background-color: #0056b3;
+    background-color: whitesmoke;
+    color: black;
 }
 
 /* Lower portion */
 .lower-portion {
     text-align: center;
+    margin-top: 30px;
     /* background-color: #FFFFED; */
 }
 
@@ -151,19 +162,52 @@ ul li a:hover {
 
 .departments-list li {
     width: 25%;
-    background-color: #4a6582;
-    color: white;
+    /* background-color: #4857fb; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* color: white;
     padding: 20px 20px;
     border-radius: 5px;
     font-size: 16px;
     margin: 10px;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; */
 }
 
 .departments-list li:hover {
-    background-color: #0c44b5;
+    /* background-color: #0c44b5; */
+    background-color: #f1f1f1;
+    transform: scale(1.05);
+
+}
+
+
+.department-img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+.departments-list span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
 }
 
 /* Responsive */

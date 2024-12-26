@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* align-items: center; */
+    align-items: center;
     height: 100vh;
 }
 
@@ -62,68 +62,68 @@ ul li a:hover {
 }
 
 
-.manage-doctors-container {
-    display: flex;
-    justify-content: center;
-    padding: 20px 40px;
-    gap: 20px;
+
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
 }
 
-
-/* .table-section{
-    width: 80%;
-} */
-
-
-.table-section {
-    /* flex: 1; */
+.form-section {
+    max-width: 500px; 
+    margin: 0 auto; 
     padding: 20px;
     background-color: #f9f9f9;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.table-section h2{
+.form-section h2 {
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
 }
-.table-section table {
+
+#from-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#from-body label {
+    font-weight: bold;
+    flex: 1;
+    margin-right: 10px;
+}
+
+#from-body input,
+#from-body select {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #ccc;
+    /* border: none; */
+    border-radius: 4px;
+}
+
+#from-body > div {
+    display: flex;
+    align-items: center;
+}
+
+#from-body button {
     width: 100%;
-    border-collapse: collapse;
-}
-
-.table-section{
-    max-height: 800px;
-    overflow-y: auto;
-}
-.table-section th,
-.table-section td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-.table-section th {
-    background-color: #f2f2f2;
-}
-
-.edit-btn,
-.delete-btn {
-    padding: 5px 10px;
-    margin-bottom: 5px;
+    padding: 12px;
+    background-color: #007bff; /* Blue background */
+    color: #fff;
     border: none;
     border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
-    color: #fff;
-    font-size: 0.9em;
-    margin-right: 5px;
-    width: 80px;
 }
 
-.edit-btn {
-    background-color: #ffc107;
-}
-
-.delete-btn {
-    background-color: #dc3545;
+#from-body button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
