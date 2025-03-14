@@ -1,6 +1,8 @@
 document.getElementById('form-body').addEventListener('submit', async function(event) {
     event.preventDefault(); 
     
+    console.log('Form submitted');
+
     const name = document.getElementById('name').value;
     const age = document.getElementById('age').value;
     const profession = document.getElementById('profession').value;
@@ -36,8 +38,9 @@ document.getElementById('form-body').addEventListener('submit', async function(e
             body: JSON.stringify(data)
         });
         
+        console.log(response);
 
-        if (response.ok) {
+        if (response.status === 201) {
             const result = await response.json();
             alert("Registration Successful");
             // Handle successful registration (e.g., redirect to login page)

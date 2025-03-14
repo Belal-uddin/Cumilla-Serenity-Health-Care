@@ -5,40 +5,73 @@ const loginService = require('../services/loginServices.js');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-// registration logic
-exports.register = async (req, res) => {
-    const { name, age, profession, email, mobile,role, password } = req.body;
+// // registration logic
+// exports.register = async (req, res) => {
+//     const { name, age, profession, email, mobile,role, password } = req.body;
 
+//     const passwordValidation = validatePassword(password);
+//     if (!passwordValidation.valid) {
+//         return res.status(400).json({ error: passwordValidation.message });
+//     }
+
+//     const hashedPassword = await hashPassword(password);
+
+//     // SQL query to insert a new user into the 'users' table
+//     const query = `
+//         INSERT INTO users (name, age, profession, email, mobile,role, password) 
+//         VALUES (?, ?, ?, ?, ?, ?,?)
+//     `;
+
+//     try {
+//         // Wrap db.query inside a Promise
+//         const result = await new Promise((resolve, reject) => {
+//             db.query(query, [name, age, profession, email, mobile, role, hashedPassword], (err, result) => {
+//                 if (err) reject(err);
+//                 else resolve(result);
+//             });
+//         });
+
+//         console.log('User registered successfully:', result.insertId);
+//         return res.status(201).json({ message: 'Registration successful!', userId: result.insertId });
+
+//     } catch (error) {
+//         console.error('Error registering user:', error);
+//         res.status(500).json({ error: 'Internal Server Error' });
+//     }
+// };
+
+
+
+exports.register = async (req, res) => {
+    const { name, age, profession, email, mobile, role, password } = req.body;
+
+    // Validate password
     const passwordValidation = validatePassword(password);
     if (!passwordValidation.valid) {
         return res.status(400).json({ error: passwordValidation.message });
     }
 
-    const hashedPassword = await hashPassword(password);
-
-    // SQL query to insert a new user into the 'users' table
-    const query = `
-        INSERT INTO users (name, age, profession, email, mobile,role, password) 
-        VALUES (?, ?, ?, ?, ?, ?,?)
-    `;
-
     try {
-        // Insert the user into the database using raw SQL
-        db.query(query, [name, age, profession, email, mobile,role, hashedPassword], (err, result) => {
-            if (err) {
-                console.error('Error registering user:', err);
-                return res.status(500).json({ error: 'Internal Server Error' });
-            }
+        // Hash the password
+        const hashedPassword = await hashPassword(password);
 
-            // Send a successful response with the user ID
-            res.status(201).json({ message: 'Registration successful!', userId: result.insertId });
-        });
+        // SQL query to insert a new user into the 'users' table
+        const query = `
+            INSERT INTO users (name, age, profession, email, mobile, role, password) 
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        `;
+
+        // Execute the query using async/await
+        const [result] = await db.execute(query, [name, age, profession, email, mobile, role, hashedPassword]);
+
+        console.log("User registered successfully:", result.insertId);
+        return res.status(201).json({ message: "Registration successful!", userId: result.insertId });
+
     } catch (error) {
-        console.error('Error registering user:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
+        console.error("Error registering user:", error);
+        res.status(500).json({ error: "Internal Server Error" });
     }
 };
-
 
 
 
